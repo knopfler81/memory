@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+ 	<link rel="stylesheet" href="style.css" type="text/css">
+
+    <title>Hello, world!</title>
+  </head>
+
+  <body>
+		<div class="container">
+			<h1 id="myTitle">Memory</h1>
+			<div class="row">
+				<div class="col-xs-12">
+					<button id="start" class="btn btn-primary">
+						Commencer le jeu
+					</button><br>
+					<h2 id="messageStart"></h2>
+				</div>			
+			</div>
+			<div class="row">
+				<div class="col-xs-4 cards">
+					<div id= "1" class="card"></div>
+					<div id= "2" class="card"></div>
+					<div id= "3" class="card"></div>
+				</div>
+				<div class="col-xs-4 cards">
+					<div id= "4" class="card"></div>
+					<div id= "5" class="card"></div>
+					<div id= "6" class="card"></div>
+				</div>
+				<div class="col-xs-4 cards">
+					<div id= "7" class="card"></div>
+					<div id= "8" class="card"></div>
+					
+				</div>
+			</div>
+		</div>
+
+		
+	<script type="text/javascript" src="script.js"></script>
+	<script>
+
+		var getCards = Array.from(document.getElementsByClassName("card"));
+		var createCards = ["😃", "😎","😇","❤️", "😃", "😎","😇","❤️"]
+
+		getCards.forEach(function(card){
+
+			var randomCard = createCards[Math.floor(Math.random() * createCards.length)]
+
+			var cardIndex = createCards.indexOf(randomCard);
+			var remove = createCards.splice(cardIndex, 1);
+
+			card.innerHTML = randomCard
+	})
+
+		
+
+	</script>
+  </body>
+</html>
+	
